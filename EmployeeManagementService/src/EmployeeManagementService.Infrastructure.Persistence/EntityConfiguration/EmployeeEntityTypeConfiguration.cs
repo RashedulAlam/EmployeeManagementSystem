@@ -1,4 +1,5 @@
 ﻿using EmployeeManagementService.Domain.Employee;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfiguration
@@ -15,7 +16,18 @@ namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfigurati
 
             builder.Property(x => x.FirstName)
                 .IsRequired()
-                .HasMaxLength()
+                .HasMaxLength(Employee.FirstNameMaxLength);
+
+            builder.Property(x => x.LastName)
+                .IsRequired()
+                .HasMaxLength(Employee.LastNameMaxLength);
+
+            builder.HasAlternateKey(x => x.Email);
+
+            builder.HasOne(x => x.Department)
+                .WithMany(x => x.Employees)
+                .HasForeignKey(x => x.DepartmentId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

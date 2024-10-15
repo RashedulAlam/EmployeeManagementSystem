@@ -13,6 +13,7 @@ namespace EmployeeManagementService.Infrastructure.persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new EmployeeEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DepartmentEntityTypeConfiguration());
         }
     }
