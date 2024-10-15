@@ -9,17 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementService",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{985E4431-6AAF-4F2C-9BBC-D533D77530F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementService.Domain", "src\EmployeeManagementService.Domain\EmployeeManagementService.Domain.csproj", "{665AAED4-A1EF-43FE-AC14-DA326AF576CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementService.Domain", "src\EmployeeManagementService.Domain\EmployeeManagementService.Domain.csproj", "{665AAED4-A1EF-43FE-AC14-DA326AF576CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementService.Business", "src\EmployeeManagementService.Business\EmployeeManagementService.Business.csproj", "{EE6AE13D-67D2-4A04-BBE5-EC5AE4BAD39E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementService.Business", "src\EmployeeManagementService.Business\EmployeeManagementService.Business.csproj", "{EE6AE13D-67D2-4A04-BBE5-EC5AE4BAD39E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementService.Infrastructure.Persistance", "src\EmployeeManagementService.Infrastructure.Persistance\EmployeeManagementService.Infrastructure.Persistance.csproj", "{D6857716-E8BF-40F7-8FCC-D5B758D75546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementService.Infrastructure.External", "src\EmployeeManagementService.Infrastructure.External\EmployeeManagementService.Infrastructure.External.csproj", "{27F51E07-D544-44B8-8E6F-A2501E650944}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementService.Infrastructure.External", "src\EmployeeManagementService.Infrastructure.External\EmployeeManagementService.Infrastructure.External.csproj", "{27F51E07-D544-44B8-8E6F-A2501E650944}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTesting", "tests\UnitTesting\UnitTesting.csproj", "{F9502683-0897-49E6-BEEA-6839ADDB7731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "tests\UnitTesting\UnitTesting.csproj", "{F9502683-0897-49E6-BEEA-6839ADDB7731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcceptanceTesting", "tests\AcceptanceTesting\AcceptanceTesting.csproj", "{BFC7E253-C82B-4B02-B125-B602EE8C72EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcceptanceTesting", "tests\AcceptanceTesting\AcceptanceTesting.csproj", "{BFC7E253-C82B-4B02-B125-B602EE8C72EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementService.Infrastructure.Persistence", "src\EmployeeManagementService.Infrastructure.Persistence\EmployeeManagementService.Infrastructure.Persistence.csproj", "{68474AFD-36DC-4362-804A-68929FD70A04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,6 @@ Global
 		{EE6AE13D-67D2-4A04-BBE5-EC5AE4BAD39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE6AE13D-67D2-4A04-BBE5-EC5AE4BAD39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE6AE13D-67D2-4A04-BBE5-EC5AE4BAD39E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6857716-E8BF-40F7-8FCC-D5B758D75546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6857716-E8BF-40F7-8FCC-D5B758D75546}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6857716-E8BF-40F7-8FCC-D5B758D75546}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6857716-E8BF-40F7-8FCC-D5B758D75546}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27F51E07-D544-44B8-8E6F-A2501E650944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27F51E07-D544-44B8-8E6F-A2501E650944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27F51E07-D544-44B8-8E6F-A2501E650944}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,6 +51,10 @@ Global
 		{BFC7E253-C82B-4B02-B125-B602EE8C72EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC7E253-C82B-4B02-B125-B602EE8C72EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC7E253-C82B-4B02-B125-B602EE8C72EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68474AFD-36DC-4362-804A-68929FD70A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68474AFD-36DC-4362-804A-68929FD70A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68474AFD-36DC-4362-804A-68929FD70A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68474AFD-36DC-4362-804A-68929FD70A04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,10 +63,10 @@ Global
 		{7D1EA22C-9FBA-4827-8F31-F17BC8D0ACEA} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
 		{665AAED4-A1EF-43FE-AC14-DA326AF576CF} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
 		{EE6AE13D-67D2-4A04-BBE5-EC5AE4BAD39E} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
-		{D6857716-E8BF-40F7-8FCC-D5B758D75546} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
 		{27F51E07-D544-44B8-8E6F-A2501E650944} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
 		{F9502683-0897-49E6-BEEA-6839ADDB7731} = {985E4431-6AAF-4F2C-9BBC-D533D77530F1}
 		{BFC7E253-C82B-4B02-B125-B602EE8C72EF} = {985E4431-6AAF-4F2C-9BBC-D533D77530F1}
+		{68474AFD-36DC-4362-804A-68929FD70A04} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F34E4496-503B-4289-9B06-231E4A16A8F4}
