@@ -22,7 +22,8 @@ namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfigurati
                 .IsRequired()
                 .HasMaxLength(Employee.LastNameMaxLength);
 
-            builder.HasAlternateKey(x => x.Email);
+            builder.HasIndex(x => x.Email)
+                .IsUnique();
 
             builder.HasOne(x => x.Department)
                 .WithMany(x => x.Employees)

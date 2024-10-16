@@ -1,3 +1,4 @@
+using EmployeeManagementService.Business;
 using EmployeeManagementService.Infrastructure;
 using EmployeeManagementService.Infrastructure.External;
 using EmployeeManagementService.Infrastructure.Persistence;
@@ -13,6 +14,8 @@ builder.Services.RegisterApiVersioning();
 builder.Services.RegisterPersistenceDependencies(builder.Configuration);
 builder.Services.RegisterExternalDependencies();
 builder.Services.RegisterExceptionHandlers();
+builder.Services.RegisterAutomapper();
+builder.Services.RegisterBusinessDependencies();
 
 builder.Services.RegisterLogging();
 

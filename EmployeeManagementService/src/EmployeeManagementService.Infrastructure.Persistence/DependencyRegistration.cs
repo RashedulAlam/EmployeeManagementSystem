@@ -11,11 +11,14 @@ namespace EmployeeManagementService.Infrastructure.Persistence
         {
             services.AddDbContextPool<EmployeeDbContext>(builder =>
             {
-                builder.UseNpgsql(configuration.GetConnectionString("default"), optionsBuilder =>
+                builder.UseNpgsql(configuration.GetConnectionString("default"),  optionsBuilder =>
                     {
                         optionsBuilder.MigrationsAssembly(typeof(EmployeeDbContext).Assembly.FullName);
                         optionsBuilder.CommandTimeout(300);
-                    })
+                        optionsBuilder.EnableRetryOnFailure(5);
+                        optionsBuilder.MigrationsHistoryTable("__EFMigrationsHistory",
+                            schema: DbConstants.DefaultSchemaName);
+                    } )
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
 

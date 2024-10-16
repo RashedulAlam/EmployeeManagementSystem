@@ -21,5 +21,7 @@ public class DeleteDepartmentCommandHandler(IUnitOfWork unitOfWork)
         }
 
         await unitOfWork.DepartmentRepository.Remove(request.Id);
+
+        await unitOfWork.SaveChanges();
     }
 }

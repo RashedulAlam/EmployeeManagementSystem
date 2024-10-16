@@ -27,6 +27,8 @@ namespace EmployeeManagementService.Business.Features.Departments.Handlers
 
             var newDepartment = await unitOfWork.DepartmentRepository.Add(department);
 
+            await unitOfWork.SaveChanges();
+
             return mapper.Map<DepartmentResponse>(newDepartment);
         }
     }

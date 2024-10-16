@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Departments\Queries\" />
     <Folder Include="Features\Departments\Validators\" />
     <Folder Include="Features\Employees\Validators\" />
-    <Folder Include="Features\Employees\Queries\" />
-    <Folder Include="Features\EmployeeTax\" />
+    <Folder Include="Features\EmployeeTax\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagementService.Common\EmployeeManagementService.Common.csproj" />
+    <ProjectReference Include="..\EmployeeManagementService.Infrastructure.External\EmployeeManagementService.Infrastructure.External.csproj" />
     <ProjectReference Include="..\EmployeeManagementService.Infrastructure.Persistence\EmployeeManagementService.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 

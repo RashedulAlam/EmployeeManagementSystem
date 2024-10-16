@@ -12,6 +12,7 @@ namespace EmployeeManagementService.Controllers
     [ApiController]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class EmployeeController(IMediator mediator, IMapper mapper) : ControllerBase
     {
         [HttpPost]
@@ -24,7 +25,7 @@ namespace EmployeeManagementService.Controllers
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType<EmployeeResponse>(StatusCodes.Status200OK)]
-        public async Task<EmployeeResponse> Update(UpdateEmployeeRequest request)
+        public async Task<EmployeeResponse> Update([FromBody] UpdateEmployeeRequest request)
         {
             return await mediator.Send(mapper.Map<CreateEmployeeCommand>(request));
         }

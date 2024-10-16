@@ -20,5 +20,7 @@ namespace EmployeeManagementService.Domain.Employee
         public string DepartmentId { get; set; }
 
         public Department Department { get; set; }
+
+        public ICollection<EmployeeTax.EmployeeTax> EmployeeTaxes { get; set; }
     }
 }

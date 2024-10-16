@@ -34,6 +34,8 @@ public class UpdateDepartmentCommandHandler(IUnitOfWork unitOfWork, IMapper mapp
 
         var updatedDepartment = await unitOfWork.DepartmentRepository.Update(department);
 
+        await unitOfWork.SaveChanges();
+
         return mapper.Map<DepartmentResponse>(updatedDepartment);
     }
 }

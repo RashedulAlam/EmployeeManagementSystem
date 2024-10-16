@@ -13,7 +13,8 @@ namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfigurati
                 .IsRequired()
                 .HasMaxLength(Department.NameMaxLength);
 
-            builder.HasAlternateKey(x => x.Name);
+            builder.HasIndex(x => x.Name)
+                .IsUnique();
         }
     }
 }

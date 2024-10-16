@@ -7,6 +7,7 @@ namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfigurati
     public class AuditableEntityTypeConfiguration<T,TU> : IEntityTypeConfiguration<T> where T : AuditableBaseEntity<TU>
     {
         private const int UserNameMaxLength = 320;
+        protected const int StingIdMaxLength = 36;
 
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
@@ -14,6 +15,7 @@ namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfigurati
 
             builder.Property(x => x.Id)
                 .IsRequired()
+                .HasMaxLength(StingIdMaxLength)
                 .ValueGeneratedOnAdd();
 
             builder.Property(x => x.CreatedBy)
@@ -24,11 +26,11 @@ namespace EmployeeManagementService.Infrastructure.Persistence.EntityConfigurati
                 .IsRequired()
                 .HasMaxLength(UserNameMaxLength);
 
-            builder.Property(x => x.Created)
+            builder.Property(x => x.CreatedAt)
                 .IsRequired()
                 .HasDefaultValue(DateTimeOffset.UtcNow);
 
-            builder.Property(x => x.LastModified)
+            builder.Property(x => x.LastModifiedAt)
                 .IsRequired()
                 .HasDefaultValue(DateTimeOffset.UtcNow);
 

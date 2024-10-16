@@ -12,6 +12,7 @@ namespace EmployeeManagementService.Controllers
     [ApiController]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
+    [ApiExplorerSettings(GroupName = "v1")]
     public class DepartmentController(IMediator mediator, IMapper mapper) : ControllerBase
     {
         [HttpGet]
