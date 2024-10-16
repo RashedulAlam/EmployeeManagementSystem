@@ -3,7 +3,24 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Departments\Queries\" />
+    <Folder Include="Features\Departments\Validators\" />
+    <Folder Include="Features\Employees\Validators\" />
+    <Folder Include="Features\Employees\Queries\" />
+    <Folder Include="Features\EmployeeTax\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagementService.Infrastructure.Persistence\EmployeeManagementService.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
 
 </Project>

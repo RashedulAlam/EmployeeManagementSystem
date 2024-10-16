@@ -4,20 +4,29 @@ using EmployeeManagementService.Infrastructure.Persistence.Repositories;
 
 namespace EmployeeManagementService.Infrastructure.Persistence;
 
-public class UnitOfWork(EmployeeDbContext employeeDbContext) : IUnitOfWork, IDisposable, IAsyncDisposable
+public class UnitOfWork(EmployeeDbContext employeeDbContext) : IUnitOfWork, IDisposable
 {
     public IGenericRepository<Employee, int> EmployeeRepository => new GenericRepository<Employee, int>(employeeDbContext);
 
     public IGenericRepository<Department, string> DepartmentRepository =>
         new GenericRepository<Department, string>(employeeDbContext);
 
+
     public void Dispose()
     {
-        employeeDbContext?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
     }
 
-    public async ValueTask DisposeAsync()
+    protected virtual void Dispose(bool disposing)
     {
-        if (employeeDbContext != null) await employeeDbContext.DisposeAsync();
+        if (disposing)
+        {
+            if (employeeDbContext != null)
+            {
+                employeeDbContext.Dispose();
+                employeeDbContext = null;
+            }
+        }
     }
 }

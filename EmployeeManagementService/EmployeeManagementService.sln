@@ -21,6 +21,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcceptanceTesting", "tests\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementService.Infrastructure.Persistence", "src\EmployeeManagementService.Infrastructure.Persistence\EmployeeManagementService.Infrastructure.Persistence.csproj", "{68474AFD-36DC-4362-804A-68929FD70A04}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FEDC8A02-6FD4-4336-95C5-38626D3CB81E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementService.Common", "src\EmployeeManagementService.Common\EmployeeManagementService.Common.csproj", "{36ECE844-BA42-4C38-B649-B93EF3308DE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{68474AFD-36DC-4362-804A-68929FD70A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68474AFD-36DC-4362-804A-68929FD70A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68474AFD-36DC-4362-804A-68929FD70A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36ECE844-BA42-4C38-B649-B93EF3308DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36ECE844-BA42-4C38-B649-B93EF3308DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36ECE844-BA42-4C38-B649-B93EF3308DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36ECE844-BA42-4C38-B649-B93EF3308DE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +75,7 @@ Global
 		{F9502683-0897-49E6-BEEA-6839ADDB7731} = {985E4431-6AAF-4F2C-9BBC-D533D77530F1}
 		{BFC7E253-C82B-4B02-B125-B602EE8C72EF} = {985E4431-6AAF-4F2C-9BBC-D533D77530F1}
 		{68474AFD-36DC-4362-804A-68929FD70A04} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
+		{36ECE844-BA42-4C38-B649-B93EF3308DE6} = {8268F918-E0F6-41FA-9DE7-31C8DBACF689}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F34E4496-503B-4289-9B06-231E4A16A8F4}

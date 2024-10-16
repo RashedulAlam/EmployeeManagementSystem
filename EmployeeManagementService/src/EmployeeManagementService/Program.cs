@@ -1,15 +1,26 @@
+using EmployeeManagementService.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.RegisterSwagger();
+builder.Services.RegisterCors();
+builder.Services.RegisterApiVersioning();
+
+builder.Services.RegisterLogging();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseHttpLogging();
+
+app.UseCors(policyBuilder =>
+{
+    policyBuilder.AllowAnyHeader();
+    policyBuilder.AllowAnyMethod();
+    policyBuilder.AllowAnyOrigin();
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
