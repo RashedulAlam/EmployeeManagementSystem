@@ -1,11 +1,9 @@
-﻿using Asp.Versioning;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 
 namespace EmployeeManagementService.Controllers
 {
-    [Route("api/v{version:apiVersion}/employees")]
-    [ApiVersion("1.0")]
+    [Route("api/v1/employees")]
     [ApiController]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]

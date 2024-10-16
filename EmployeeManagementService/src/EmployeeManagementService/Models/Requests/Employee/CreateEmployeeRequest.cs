@@ -1,4 +1,4 @@
-﻿namespace EmployeeManagementService.Models.Requests
+﻿namespace EmployeeManagementService.Models.Requests.Employee
 {
     public class CreateEmployeeRequest
     {

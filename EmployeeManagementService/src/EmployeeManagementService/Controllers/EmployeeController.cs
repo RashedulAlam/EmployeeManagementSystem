@@ -1,16 +1,14 @@
-﻿using Asp.Versioning;
-using AutoMapper;
+﻿using AutoMapper;
 using EmployeeManagementService.Business.Features.Employees.Commands;
 using EmployeeManagementService.Business.Features.Employees.Responses;
-using EmployeeManagementService.Models.Requests;
+using EmployeeManagementService.Models.Requests.Employee;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 
 namespace EmployeeManagementService.Controllers
 {
-    [Route("api/v{version:apiVersion}/employees")]
-    [ApiVersion("1.0")]
+    [Route("api/v1/employees")]
     [ApiController]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
