@@ -6,11 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
+builder.Services.AddHttpClient();
 builder.Services.RegisterSwagger();
 builder.Services.RegisterCors();
 builder.Services.RegisterApiVersioning();
 builder.Services.RegisterPersistenceDependencies(builder.Configuration);
 builder.Services.RegisterExternalDependencies();
+builder.Services.RegisterExceptionHandlers();
 
 builder.Services.RegisterLogging();
 
@@ -31,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
+// app.UseExceptionHandler();
 
 app.MapControllers();
 
