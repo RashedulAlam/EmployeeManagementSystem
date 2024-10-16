@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagementService.Business\EmployeeManagementService.Business.csproj" />
+    <ProjectReference Include="..\EmployeeManagementService.Infrastructure.External\EmployeeManagementService.Infrastructure.External.csproj" />
   </ItemGroup>
 
 </Project>

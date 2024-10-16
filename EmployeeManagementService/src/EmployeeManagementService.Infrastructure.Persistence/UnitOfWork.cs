@@ -11,6 +11,11 @@ public class UnitOfWork(EmployeeDbContext employeeDbContext) : IUnitOfWork, IDis
     public IGenericRepository<Department, string> DepartmentRepository =>
         new GenericRepository<Department, string>(employeeDbContext);
 
+    public async Task SaveChanges()
+    {
+        await employeeDbContext.SaveChangesAsync();
+    }
+
 
     public void Dispose()
     {

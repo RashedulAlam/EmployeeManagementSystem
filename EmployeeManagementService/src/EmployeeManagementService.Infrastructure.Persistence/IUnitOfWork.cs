@@ -7,5 +7,6 @@ namespace EmployeeManagementService.Infrastructure.Persistence
     {
         public IGenericRepository<Employee, int> EmployeeRepository { get;}
         public IGenericRepository<Department, string> DepartmentRepository { get;}
+        public Task SaveChanges();
     }
 }

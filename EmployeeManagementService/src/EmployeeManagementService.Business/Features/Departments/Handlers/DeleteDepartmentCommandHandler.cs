@@ -7,7 +7,7 @@ using MediatR;
 
 namespace EmployeeManagementService.Business.Features.Departments.Handlers;
 
-public class DeleteDepartmentCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+public class DeleteDepartmentCommandHandler(IUnitOfWork unitOfWork)
     : IRequestHandler<DeleteDepartmentCommand>
 {
 
