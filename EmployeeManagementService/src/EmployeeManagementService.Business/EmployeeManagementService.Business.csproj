@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EmployeeManagementService.Common\EmployeeManagementService.Common.csproj" />
     <ProjectReference Include="..\EmployeeManagementService.Infrastructure.Persistence\EmployeeManagementService.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 

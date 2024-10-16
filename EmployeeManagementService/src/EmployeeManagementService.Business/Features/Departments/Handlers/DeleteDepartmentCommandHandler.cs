@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EmployeeManagementService.Business.Features.Departments.Commands;
+using EmployeeManagementService.Common.Exceptions;
 using EmployeeManagementService.Domain.Employee;
 using EmployeeManagementService.Infrastructure.Persistence;
 using MediatR;
@@ -12,8 +13,13 @@ public class DeleteDepartmentCommandHandler(IUnitOfWork unitOfWork, IMapper mapp
 
     public async Task Handle(DeleteDepartmentCommand request, CancellationToken cancellationToken)
     {
-        var department = mapper.Map<Department>(request);
+        var department = await unitOfWork.DepartmentRepository.Get(request.Id);
 
-        var newDepartment = await unitOfWork.DepartmentRepository.Add(department);
+        if (department == null)
+        {
+            throw new EntityNotFoundException(nameof(Department), request.Id);
+        }
+
+        await unitOfWork.DepartmentRepository.Remove(request.Id);
     }
 }
