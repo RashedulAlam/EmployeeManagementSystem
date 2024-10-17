@@ -12,6 +12,9 @@ namespace EmployeeManagementService.Business.Features.Departments.Profiles
             CreateMap<CreateDepartmentCommand, Department>()
                 .ForMember(x => x.Name, opt => opt.MapFrom(x => x.Name));
 
+            CreateMap<Department,CreateDepartmentCommand>()
+                .ForMember(x => x.Name, opt => opt.MapFrom(x => x.Name));
+
             CreateMap<Department, DepartmentResponse>();
         }
     }

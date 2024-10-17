@@ -7,6 +7,8 @@ namespace EmployeeManagementService.Business
         public static IServiceCollection RegisterBusinessDependencies(this IServiceCollection services)
         {
 
+            services.AddAutoMapper(typeof(DependencyRegistration).Assembly);
+
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssemblies(typeof(DependencyRegistration).Assembly);

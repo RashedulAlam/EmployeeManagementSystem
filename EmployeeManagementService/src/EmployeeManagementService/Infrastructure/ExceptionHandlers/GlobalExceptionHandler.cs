@@ -8,33 +8,33 @@ namespace EmployeeManagementService.Infrastructure.ExceptionHandlers
     {
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
+            logger.LogError("{0}", exception);
+            var response = new Dictionary<string, string>();
+
             switch (exception)
             {
                 case DuplicateEntityException duplicateEntityException:
-                    await httpContext.Response.WriteAsJsonAsync(new { Errors = duplicateEntityException.Message }, cancellationToken: cancellationToken);
+                    response.Add("errors", duplicateEntityException.Message);
                     httpContext.Response.StatusCode = (int)HttpStatusCode.UnprocessableEntity;
                     break;
                 
                 case EntityNotFoundException entityNotFoundException:
-                    await httpContext.Response.WriteAsJsonAsync(new { Errors = entityNotFoundException.Message }, cancellationToken: cancellationToken);
+                    response.Add("errors", entityNotFoundException.Message);
                     httpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
 
                 default:
+                    response.Add("errors", "Internal Server Error");
                     if (env.IsDevelopment())
                     {
-                        await httpContext.Response.WriteAsJsonAsync(new { Errors = "Internal Server Error", exception.StackTrace }, cancellationToken: cancellationToken);
-                    }
-                    else
-                    {
-                        await httpContext.Response.WriteAsJsonAsync(new { Errors = "Internal Server Error" }, cancellationToken: cancellationToken);
+                        response.Add("StackTrace", exception.StackTrace);
                     }
 
                     httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     break;
             }
 
-            logger.LogError("{0}", exception);
+            await httpContext.Response.WriteAsJsonAsync(response, cancellationToken: cancellationToken);
 
             return true;
         }

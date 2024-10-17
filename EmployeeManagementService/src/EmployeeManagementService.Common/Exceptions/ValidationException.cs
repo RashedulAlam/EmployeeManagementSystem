@@ -1,4 +1,4 @@
 ﻿namespace EmployeeManagementService.Common.Exceptions
 {
-    public class ValidationException(string message) : Exception(message);
+    public abstract class ValidationException(string message) : Exception(message);
 }

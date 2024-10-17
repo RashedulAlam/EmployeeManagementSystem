@@ -1,4 +1,6 @@
 ﻿using EmployeeManagementService.Domain.Employee;
+using EmployeeManagementService.Domain.EmployeeTax;
+using EmployeeManagementService.Domain.Tax;
 using EmployeeManagementService.Infrastructure.persistence;
 using EmployeeManagementService.Infrastructure.Persistence.Repositories;
 
@@ -10,6 +12,15 @@ public class UnitOfWork(EmployeeDbContext employeeDbContext) : IUnitOfWork, IDis
 
     public IGenericRepository<Department, string> DepartmentRepository =>
         new GenericRepository<Department, string>(employeeDbContext);
+
+    public IGenericRepository<TaxYear, string> TaxYearRepository =>
+        new GenericRepository<TaxYear, string>(employeeDbContext);
+
+    public IGenericRepository<TaxInformation, string> TaxInformationRepository =>
+        new GenericRepository<TaxInformation, string>(employeeDbContext);
+
+    public IGenericRepository<EmployeeTax, int> EmployeeTax =>
+        new GenericRepository<EmployeeTax, int>(employeeDbContext);
 
     public async Task SaveChanges()
     {
